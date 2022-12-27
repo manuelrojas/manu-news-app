@@ -1,0 +1,52 @@
+
+.menu-news
+  display: flex
+  flex-direction: column
+  gap: 2rem
+
+.menu-news-item
+  a
+    text-decoration: none
+    white-space: nowrap
+    &:hover
+      color: #000
+    &:visited
+      color: #000
+
+.menu-news-item-selected
+  display: flex
+  flex-direction: column
+  transition: all 0.2s ease-in-out
+  height: 40px
+  background: white
+  box-shadow: 0px 0px 18px -2px #d9d9d9
+  line-height: 40px
+  padding-left: 30px
+  padding-right: 10px
+  color: rgba(74, 74, 74, 0.8)
+  position: relative
+  cursor: pointer
+
+  &:after
+    transition: all ease-in-out 0.2s
+    content: ""
+    position: absolute
+    left: calc(100% - 10px)
+    top: 6px
+    z-index: 1
+    width: 0
+    height: 0
+    border: 14px solid #ffffff
+    border-left-color: transparent
+    border-bottom-color: transparent
+    box-shadow: 0px 0px 0 0px #d9d9d9, 5px -5px 10px -4px #d9d9d9
+    transform: rotate(45deg)
+    margin-left: -4px
+
+  a
+    text-decoration: none
+    white-space: nowrap
+    &:hover
+      color: #000
+    &:visited
+      color: #000

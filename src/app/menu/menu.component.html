@@ -1,0 +1,13 @@
+<div class="menu-news">
+  <div
+    [ngClass]="{
+      'menu-news-item-selected': id === item.identifier,
+      'menu-news-item': id !== item.identifier
+    }"
+    *ngFor="let item of data?.contentlets"
+  >
+    <a routerLink="/news/{{ item.identifier }}">
+      {{ item.title }}
+    </a>
+  </div>
+</div>

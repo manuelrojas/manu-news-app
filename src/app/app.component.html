@@ -1,13 +1,14 @@
-
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-
   <span>The Manu Times</span>
 </div>
 
 <div class="content" role="main">
+  <div class="menu-news">
+    <app-menu></app-menu>
+  </div>
 
-
+  <div class="news-item-selected">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
-<router-outlet></router-outlet>
