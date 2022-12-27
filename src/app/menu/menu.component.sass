@@ -1,52 +1,49 @@
 
+$menu-shadow: #d9d9d9
+
 .menu-news
   display: flex
   flex-direction: column
   gap: 2rem
 
 .menu-news-item
-  a
-    text-decoration: none
+  display: flex
+  flex-direction: row
+  align-items: center
+
+  .menu-meta
+    display: flex
+    flex-direction: column
     white-space: nowrap
-    &:hover
-      color: #000
-    &:visited
-      color: #000
+
+.menu-img
+  margin: 1rem
+  border-radius: 10px
 
 .menu-news-item-selected
-  display: flex
-  flex-direction: column
   transition: all 0.2s ease-in-out
-  height: 40px
+  height: 76px
   background: white
-  box-shadow: 0px 0px 18px -2px #d9d9d9
-  line-height: 40px
-  padding-left: 30px
+  box-shadow: 0px 0px 18px -2px $menu-shadow
   padding-right: 10px
   color: rgba(74, 74, 74, 0.8)
   position: relative
   cursor: pointer
+  border-radius: 10px 0 0 10px
 
   &:after
     transition: all ease-in-out 0.2s
     content: ""
     position: absolute
     left: calc(100% - 10px)
-    top: 6px
+    top: 9px
     z-index: 1
     width: 0
     height: 0
-    border: 14px solid #ffffff
+    border: 29px solid #ffffff
     border-left-color: transparent
     border-bottom-color: transparent
-    box-shadow: 0px 0px 0 0px #d9d9d9, 5px -5px 10px -4px #d9d9d9
+    box-shadow: 0px 0px 0 0px $menu-shadow, 5px -5px 10px -4px $menu-shadow
     transform: rotate(45deg)
-    margin-left: -4px
-
-  a
-    text-decoration: none
-    white-space: nowrap
-    &:hover
-      color: #000
-    &:visited
-      color: #000
+    margin-left: -20px
+    border-radius: 10px

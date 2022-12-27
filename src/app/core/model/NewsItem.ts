@@ -8,6 +8,9 @@ export type NewsItem = {
   teaser: string;
   image: string;
   identifier: string;
+  hostName: string;
+  publishDate: string;
+  postingDate: string;
 };
 
 
