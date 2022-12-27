@@ -1,9 +1,7 @@
 <div class="menu-news">
   <div
     class="menu-news-item"
-    [ngClass]="{
-      'menu-news-item-selected': id === item.identifier
-    }"
+    routerLinkActive=" menu-news-item-selected"
     routerLink="/news/{{ item.identifier }}"
     *ngFor="let item of data?.contentlets"
   >
