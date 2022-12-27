@@ -5,7 +5,10 @@
     loading="lazy"
     src="https://{{ data?.hostName }}{{ data?.image }}/400w/300h/50q"
   />
-  <p>
-    {{ data?.teaser }}
-  </p>
+  <div class="menu-content-info">
+    <span> Published on: {{ data?.publishDate | date }} </span>
+    <p>
+      {{ data?.teaser }}
+    </p>
+  </div>
 </div>
