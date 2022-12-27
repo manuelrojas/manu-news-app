@@ -1,7 +1,7 @@
-<div class="menu-content">
+<div [ngClass]="{ loading }" class="menu-content">
   <img
-    class="menu-img"
-    loading=lazy
+    *ngIf="data?.hostName"
+    loading="lazy"
     src="https://{{ data?.hostName }}{{ data?.image }}/400w/300h/50q"
   />
   <p>

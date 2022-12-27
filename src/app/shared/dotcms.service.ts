@@ -7,9 +7,7 @@ import { catchError, retry } from 'rxjs/operators';
 export class DotCmsService {
   baseUrl =
     'https://demo.dotcms.com/api/content/render/false/query/+contentType:Blog/orderby/modDate%20desc';
-  constructor(private http: HttpClient) { }
-
-
+  constructor(private http: HttpClient) {}
 
   sendGetRequest() {
     return this.http.get(this.baseUrl, {});
@@ -19,4 +17,7 @@ export class DotCmsService {
     return this.http.get(`https://demo.dotcms.com/api/content/id/${id}`, {});
   }
 
+  getImage(imageUrl: string): Observable<Blob> {
+    return this.http.get(imageUrl, { responseType: 'blob' });
+  }
 }

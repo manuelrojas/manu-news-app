@@ -9,8 +9,10 @@ import { DotCmsService } from '../shared/dotcms.service';
   styleUrls: ['./news-item.component.sass'],
 })
 export class NewsItemComponent {
+[x: string]: any;
   data: NewsItem | undefined;
   selected: boolean | undefined;
+  loading: boolean | undefined = true;
 
   constructor(
     private dotCmsService: DotCmsService,
@@ -23,6 +25,10 @@ export class NewsItemComponent {
 
     this.dotCmsService.getContentById(id).subscribe((data) => {
       this.data = (data as DotCmsResponse).contentlets[0];
+      setTimeout(() => {
+        this.loading = false;
+      }, 500);
+
     });
   }
 
