@@ -5,7 +5,6 @@ import {
   Router,
   RoutesRecognized,
 } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 import { DotCmsResponse } from '../core/model/NewsItem';
 import { DotCmsService } from '../shared/dotcms.service';
 
@@ -23,6 +22,10 @@ export class MenuComponent {
   showNews() {
     this.dotCmsService.sendGetRequest().subscribe((data) => {
       const response = data as DotCmsResponse;
+      this.router.navigate([
+        '/news',
+        this.id || response?.contentlets[0]?.identifier,
+      ]);
       this.data = response;
     });
   }
