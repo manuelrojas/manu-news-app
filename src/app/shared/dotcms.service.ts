@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
 
 @Injectable()
 export class DotCmsService {
@@ -15,9 +13,5 @@ export class DotCmsService {
 
   getContentById(id: string) {
     return this.http.get(`https://demo.dotcms.com/api/content/id/${id}`, {});
-  }
-
-  getImage(imageUrl: string): Observable<Blob> {
-    return this.http.get(imageUrl, { responseType: 'blob' });
   }
 }

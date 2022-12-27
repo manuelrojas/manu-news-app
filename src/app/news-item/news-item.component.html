@@ -1,5 +1,6 @@
 <div [ngClass]="{ loading }" class="menu-content">
   <img
+    class="menu-content-img"
     *ngIf="data?.hostName"
     loading="lazy"
     src="https://{{ data?.hostName }}{{ data?.image }}/400w/300h/50q"
