@@ -1,0 +1,11 @@
+<div class="form-group">
+  <select
+    name="filterType"
+    id="filterType"
+    class="filter-type-select"
+    [(ngModel)]="type"
+    (ngModelChange)="setFilterDate()"
+  >
+    <option *ngFor="let type of filterType" [value]="type">{{ type }}</option>
+  </select>
+</div>

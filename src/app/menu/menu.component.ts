@@ -16,11 +16,12 @@ import { DotCmsService } from '../shared/dotcms.service';
 export class MenuComponent {
   data: DotCmsResponse | undefined;
   id: string | undefined;
+  type: string | undefined;
 
   constructor(private dotCmsService: DotCmsService, private router: Router) {}
 
   showNews() {
-    this.dotCmsService.sendGetRequest().subscribe((data) => {
+    this.dotCmsService.sendGetRequest(this.type || '').subscribe((data) => {
       const response = data as DotCmsResponse;
       this.router.navigate([
         '/news',
@@ -37,6 +38,10 @@ export class MenuComponent {
       }
     });
 
-    this.showNews();
+    this.dotCmsService.getDateFilter().subscribe((value) => {
+      this.type = value;
+      this.showNews();
+    });
+
   }
 }
