@@ -25,7 +25,7 @@ export class MenuComponent {
       const response = data as DotCmsResponse;
       this.router.navigate([
         '/news',
-        this.id || response?.contentlets[0]?.identifier,
+         this.id || response?.contentlets[0]?.identifier,
       ]);
       this.data = response;
     });
@@ -40,6 +40,7 @@ export class MenuComponent {
 
     this.dotCmsService.getDateFilter().subscribe((value) => {
       this.type = value;
+      this.id = undefined;
       this.showNews();
     });
 

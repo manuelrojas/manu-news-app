@@ -23,7 +23,7 @@ export class DotCmsService {
     let value = ""
     if (year) {
       value = encodeURI(
-        `+Blog.postingDate:[${year}0101 TO ${year}1201]`
+        `+Blog.postingDate:[${year}0101 TO ${year}1231]`
       );
     }
     this.filterType.next(value || '');
