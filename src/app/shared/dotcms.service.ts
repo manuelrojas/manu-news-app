@@ -12,8 +12,9 @@ export class DotCmsService {
   }
 
   sendGetRequest(year: string) {
+
     return this.http.get(
-      `${this.api}/content/render/false/query/+contentType:Blog${year}/orderby/modDate%20desc`,
+      `${this.api}/content/query/false/query/+contentType:Blog ${year}/orderby/modDate%20desc`,
       {}
     );
   }
@@ -21,7 +22,9 @@ export class DotCmsService {
   setDateFilter(year: string | undefined) {
     let value = ""
     if (year) {
-      value = `/+Blog.postingDate:${year}1231TO${year}1231`;
+      value = encodeURI(
+        `+Blog.postingDate:[${year}0101 TO ${year}1201]`
+      );
     }
     this.filterType.next(value || '');
   }
